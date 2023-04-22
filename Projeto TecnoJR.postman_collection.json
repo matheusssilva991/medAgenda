@@ -1,0 +1,910 @@
+{
+	"info": {
+		"_postman_id": "2bdc98fb-bf6a-48df-883b-b1ccd03bc90a",
+		"name": "Projeto TecnoJR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "GET PACIENTES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PACIENTES / ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/9",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST  PACIENTES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Matheus\",\n    \"email\": \"matheus1@gmail.com\",\n    \"senha\": \"12345678@Mc\",\n    \"cpf\": \"123556789\",\n    \"dataNascimento\": \"07/06/2000\",\n    \"ddd\": \"73\",\n    \"numeroTelefone\": \"988496079\",\n    \"rua\": \"Quarta Travessa\",\n    \"bairro\": \"Odilon\",\n    \"numeroCasa\": \"182\",\n    \"complemento\": \"Atrás do Rondelli\",\n    \"cidade\": \"Itabuna\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pacientes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT PACIENTES / ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Matheus Santos Silva\",\n    \"cpf\": \"12355678\",\n    \"dataNascimento\": \"07/06/2000\",\n    \"rua\": \"Quarta traverolandia\",\n    \"bairro\": \"Odilon\",\n    \"numeroCasa\": 182,\n    \"complemento\": \"Atrás do Rondelli\",\n    \"cidade\": \"Itabuna\",\n    \"ddd\": \"73\",\n    \"numeroTelefone\": \"988496079\",\n    \"email\": \"matheus@gmail.com\",\n    \"senha\": \"12345678@Mc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/pacientes/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PACIENTES / ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/11",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medicos",
+			"item": [
+				{
+					"name": "GET MEDICOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/medicos/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medicos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MEDICOS / ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/medicos/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CLINICAS / ID / MEDICOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/clinicas/1/medicos",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"clinicas",
+								"1",
+								"medicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST  MEDICOS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Matheus\",\n    \"email\": \"matheus3@gmail.com\",\n    \"senha\": \"12345678@Mc\",\n    \"cpf\": \"123551789\",\n    \"dataNascimento\": \"07/06/2000\",\n    \"crm\": \"1358445\",\n    \"especialidade\": \"Jogar LOL e Feedar\",\n    \"ddd\": \"73\",\n    \"numeroTelefone\": \"988496079\",\n    \"rua\": \"Quarta Travessa\",\n    \"bairro\": \"Odilon\",\n    \"numeroCasa\": \"182\",\n    \"complemento\": \"Atrás do Rondelli\",\n    \"cidade\": \"Itabuna\",\n    \"idClinica\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/medicos",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT MEDICOS / ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Matheus Santos Silva\",\n    \"email\": \"matheus5@gmail.com\",\n    \"senha\": \"12345678@Mc\",\n    \"cpf\": \"1235556789\",\n    \"dataNascimento\": \"07/07/2000\",\n    \"crm\": \"1345845\",\n    \"especialidade\": \"Jogar LOL e Feedar\",\n    \"ddd\": \"73\",\n    \"numeroTelefone\": \"988496079\",\n    \"rua\": \"Quarta Travessa\",\n    \"bairro\": \"Odilon\",\n    \"numeroCasa\": \"182\",\n    \"complemento\": \"Atrás do Rondelli\",\n    \"cidade\": \"Itabuna\",\n    \"idClinica\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/medicos/4",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medicos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE MEDICO / ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/11",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinicas",
+			"item": [
+				{
+					"name": "GET CLINICAS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/clinicas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"clinicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CLINICAS / ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/clinicas/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"clinicas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST CLINICAS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Clinica da Djamba\",\n    \"cnes\": \"121351545\",\n    \"email\": \"matheus10@gmail.com\",\n    \"senha\": \"12345678@Mc\",\n    \"ddd\": \"73\",\n    \"numeroTelefone\": \"988496040\",\n    \"rua\": \"Quarta Travessa\",\n    \"bairro\": \"Odilon\",\n    \"numeroCasa\": \"182\",\n    \"complemento\": \"Atrás do Rondelli\",\n    \"cidade\": \"Itabuna\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/clinicas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"clinicas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT CLINICAS / ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Clinica Popular\",\n    \"cnes\": \"1235155\",\n    \"email\": \"matheus4@gmail.com\",\n    \"ddd\": \"73\",\n    \"numeroTelefone\": \"988496070\",\n    \"rua\": \"Quarta Traverolandia\",\n    \"bairro\": \"Odilon\",\n    \"numeroCasa\": \"182\",\n    \"complemento\": \"Atrás do Rondelli\",\n    \"cidade\": \"Itabuna\",\n    \"nivelPermissao\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/clinicas/5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"clinicas",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CLINICAS / ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/clinicas/10",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"clinicas",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HorariosAtendimento",
+			"item": [
+				{
+					"name": "GET HORARIOS-ATENDIMENTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/horarios-atendimento",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"horarios-atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET HORARIOS-ATENDIMENTO / ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/horarios-atendimento/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"horarios-atendimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MEDICOS / ID / HORARIOS-ATENDIMENTO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/medicos/1/horarios-atendimento",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medicos",
+								"1",
+								"horarios-atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST HORARIOS-ATENDIMENTO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"diaSemana\": 0,\n    \"dataInicio\": \"22/04/2023\",\n    \"dataFim\": \"28/04/2023\",\n    \"horarioInicio\": \"06:00\",\n    \"horarioFim\": \"12:00\",\n    \"idMedico\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/horarios-atendimento",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"horarios-atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT HORARIOS-ATENDIMENTOS / ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"diaSemana\": 0,\n    \"dataInicio\": \"22/04/2023\",\n    \"dataFim\": \"28/04/2023\",\n    \"horarioInicio\": \"07:00\",\n    \"horarioFim\": \"12:00\",\n    \"idMedico\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/horarios-atendimento/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"horarios-atendimento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE HORARIOS-ATENDIMENTO / ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/horarios-atendimento/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"horarios-atendimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultas",
+			"item": [
+				{
+					"name": "GET CONSULTAS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/consultas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET CONSULTAS / ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/consultas/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"consultas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET MEDICOS / ID / CONSULTAS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/medicos/1/consultas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"medicos",
+								"1",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PACIENTES / ID / CONSULTAS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/PACIENTES/1/consultas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"PACIENTES",
+								"1",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST CONSULTAS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": \"24/04/2023\",\n    \"horarioInicio\": \"07:00\",\n    \"horarioFim\": \"08:00\",\n    \"idPaciente\": 1,\n    \"idMedico\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/consultas",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT CONSULTAS / ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": \"2023-04-24T03:00:00.000Z\",\n    \"horarioInicio\": \"07:00:00\",\n    \"horarioFim\": \"08:30:00\",\n    \"idPaciente\": 1,\n    \"idMedico\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/consultas/3",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"consultas",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE CONSULTAS / ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/consultas/2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"consultas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lembrete",
+			"item": [
+				{
+					"name": "GET LEMBRETES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/lembretes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"lembretes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET LEMBRETES / ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/lembretes/11",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"lembretes",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PACIENTES / ID / LEMBRETES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/pacientes/1/lembretes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"pacientes",
+								"1",
+								"lembretes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST LEMBRETES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"não visualizado\",\n    \"mensagem\": \"apenas um teste\",\n    \"idConsulta\": 35\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/lembretes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"lembretes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT LEMBRETES / ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"ainda não visualizado\",\n    \"mensagem\": \"Apenas outro teste\",\n    \"idConsulta\": 35\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/lembretes/11",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"lembretes",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE LEMBRETES",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/lembretes/12",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"lembretes",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Avaliacoes",
+			"item": [
+				{
+					"name": "GET AVALIACOES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/avaliacoes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"avaliacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET AVALIACOES / ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/avaliacoes/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"avaliacoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST AVALIACOES",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nota\": 5,\n    \"comentario\": \"foi boa a consulta.\",\n    \"idConsulta\": 35\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/avaliacoes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"avaliacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT AVALIACOES / ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nota\": 6,\n    \"comentario\": \"Foi realmente boa a consulta\",\n    \"idConsulta\": 35\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/avaliacoes/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"avaliacoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/avaliacoes/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"avaliacoes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}

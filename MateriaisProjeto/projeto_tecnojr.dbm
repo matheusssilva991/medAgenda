@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+ Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="1.0.1" use-changelog="false" last-position="0,0" last-zoom="0.55" max-obj-count="15"
+	 default-schema="public" default-owner="postgres"
+	 layers="Default layer"
+	 active-layers="0"
+	 layer-name-colors="#000000"
+	 layer-rect-colors="#b4b4b4"
+	 show-layer-names="false" show-layer-rects="false">
+<database name="medAgenda" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layers="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<table name="tbl_clinica" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="60" y="60"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="nome" not-null="true">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="cnes" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<constraint name="tbl_clinica_pk" type="pk-constr" table="public.tbl_clinica">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_tbl_endereco" index="3"/>
+		<object name="id_tbl_telefone" index="5"/>
+		<object name="id_tbl_user" index="4"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="tbl_clinica_uq" index="2"/>
+		<object name="tbl_clinica_uq1" index="5"/>
+		<object name="tbl_endereco_fk" index="3"/>
+		<object name="tbl_telefone_fk" index="4"/>
+		<object name="tbl_user_fk" index="1"/>
+	</customidxs>
+</table>
+
+<table name="tbl_paciente" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1060" y="960"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="nome" not-null="true">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="cpf" not-null="true">
+		<type name="varchar" length="11"/>
+	</column>
+	<column name="data_nascimento" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="tbl_paciente_pk" type="pk-constr" table="public.tbl_paciente">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_tbl_endereco" index="4"/>
+		<object name="id_tbl_telefone" index="5"/>
+		<object name="id_tbl_user" index="6"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="tbl_endereco_fk" index="1"/>
+		<object name="tbl_paciente_uq" index="3"/>
+		<object name="tbl_telefone_fk" index="4"/>
+		<object name="tbl_user_fk" index="2"/>
+	</customidxs>
+</table>
+
+<table name="tbl_telefone" layers="0" collapse-mode="2" max-obj-count="3" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="580" y="520"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="ddd" not-null="true">
+		<type name="varchar" length="2"/>
+	</column>
+	<column name="numero" not-null="true">
+		<type name="varchar" length="9"/>
+	</column>
+	<constraint name="tbl_telefone_pk" type="pk-constr" table="public.tbl_telefone">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tbl_medico" layers="0" collapse-mode="2" max-obj-count="12" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="820" y="100"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="crm" not-null="true">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="especialidade" not-null="true">
+		<type name="varchar" length="50"/>
+	</column>
+	<constraint name="tbl_medico_pk" type="pk-constr" table="public.tbl_medico">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_tbl_clinica" index="9"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="tbl_clinica_fk" index="1"/>
+	</customidxs>
+</table>
+
+<table name="tbl_consulta" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1340" y="500"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="data" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="horario_inicio" not-null="true">
+		<type name="time" length="0"/>
+	</column>
+	<column name="horario_fim" not-null="true">
+		<type name="time" length="0"/>
+	</column>
+	<constraint name="tbl_consulta_pk" type="pk-constr" table="public.tbl_consulta">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tbl_avaliacao" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1920" y="740"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="nota" not-null="true">
+		<type name="numeric" length="2"/>
+	</column>
+	<column name="comentario" not-null="true">
+		<type name="varchar" length="100"/>
+	</column>
+	<constraint name="tbl_avaliacao_pk" type="pk-constr" table="public.tbl_avaliacao">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tbl_endereco" layers="0" collapse-mode="2" max-obj-count="7" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="440" y="1040"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="rua" not-null="true">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="bairro" not-null="true">
+		<type name="varchar" length="50"/>
+	</column>
+	<column name="numero" not-null="true">
+		<type name="numeric" length="5"/>
+	</column>
+	<column name="complemento">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="cidade" not-null="true">
+		<type name="varchar" length="50"/>
+	</column>
+	<constraint name="tbl_endereco_pk" type="pk-constr" table="public.tbl_endereco">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="tbl_lembrete" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1580" y="1000"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="status" not-null="true">
+		<type name="varchar" length="0"/>
+	</column>
+	<column name="mensagem" not-null="true">
+		<type name="varchar" length="150"/>
+	</column>
+	<constraint name="tbl_lembrete_pk" type="pk-constr" table="public.tbl_lembrete">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+
+	<customidxs object-type="column">
+		<object name="id_tbl_consulta" index="3"/>
+	</customidxs>
+
+	<customidxs object-type="constraint">
+		<object name="tbl_consulta_fk" index="1"/>
+	</customidxs>
+</table>
+
+<relationship name="tbl_avaliacao_has_one_tbl_consulta" type="rel11" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#ecb81a"
+	 src-table="public.tbl_consulta"
+	 dst-table="public.tbl_avaliacao"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_consulta_has_many_tbl_lembrete" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#43c5e2"
+	 src-table="public.tbl_consulta"
+	 dst-table="public.tbl_lembrete"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_paciente_has_many_tbl_consulta" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#137ccc"
+	 src-table="public.tbl_paciente"
+	 dst-table="public.tbl_consulta"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_medico_has_many_tbl_consulta" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#965c3e"
+	 src-table="public.tbl_medico"
+	 dst-table="public.tbl_consulta"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_clinica_has_many_tbl_medico" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#23412b"
+	 src-table="public.tbl_clinica"
+	 dst-table="public.tbl_medico"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_endereco_has_many_tbl_paciente" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#0f8aa7"
+	 src-table="public.tbl_endereco"
+	 dst-table="public.tbl_paciente"
+	 src-required="false" dst-required="false"/>
+
+<table name="tbl_user" layers="0" collapse-mode="2" max-obj-count="4" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="20" y="600"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="email" not-null="true">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="senha" not-null="true">
+		<type name="varchar" length="100"/>
+	</column>
+	<column name="nivel_permissao" not-null="true">
+		<type name="numeric" length="1"/>
+	</column>
+	<constraint name="tbl_user_pk" type="pk-constr" table="public.tbl_user">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="tbl_clinica_has_one_tbl_user" type="rel11" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#63db37"
+	 src-table="public.tbl_user"
+	 dst-table="public.tbl_clinica"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_paciente_has_one_tbl_user" type="rel11" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#d9b99e"
+	 src-table="public.tbl_user"
+	 dst-table="public.tbl_paciente"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_clinica_has_one_tbl_telefone" type="rel11" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#924387"
+	 src-table="public.tbl_telefone"
+	 dst-table="public.tbl_clinica"
+	 src-required="false" dst-required="false">
+	<label ref-type="src-label">
+		<position x="-1.74355" y="6"/>
+	</label>
+</relationship>
+
+<relationship name="tbl_endereco_has_many_tbl_clinica" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#1b5ea3"
+	 src-table="public.tbl_endereco"
+	 dst-table="public.tbl_clinica"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_telefone_has_many_tbl_paciente" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#dc31a8"
+	 src-table="public.tbl_telefone"
+	 dst-table="public.tbl_paciente"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="tbl_medico_inherits_tbl_paciente" type="relgen" layers="0"
+	 pk-pattern="{dt}_pk"
+	 custom-color="#87a55a"
+	 src-table="public.tbl_medico"
+	 dst-table="public.tbl_paciente"/>
+
+<table name="tbl_horario_atendimento" layers="0" collapse-mode="2" max-obj-count="8" z-value="0">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="1520" y="160"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="0"/>
+	</column>
+	<column name="dia_semana" not-null="true">
+		<type name="smallint" length="0"/>
+	</column>
+	<column name="data_inicio" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="data_fim" not-null="true">
+		<type name="date" length="0"/>
+	</column>
+	<column name="horario_inicio" not-null="true">
+		<type name="time" length="0"/>
+	</column>
+	<column name="horario_fim" not-null="true">
+		<type name="time" length="0"/>
+	</column>
+	<constraint name="tbl_horario_atendimento_pk" type="pk-constr" table="public.tbl_horario_atendimento">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<relationship name="tbl_medico_has_many_tbl_horario_atendimento" type="rel1n" layers="0"
+	 src-col-pattern="{sc}_{st}"
+	 pk-pattern="{dt}_pk" uq-pattern="{dt}_uq"
+	 src-fk-pattern="{st}_fk"
+	 custom-color="#6f2901"
+	 src-table="public.tbl_medico"
+	 dst-table="public.tbl_horario_atendimento"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

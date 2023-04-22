@@ -1,0 +1,49 @@
+clinica:
+	nome
+	cnes
+	endereço
+	telefone
+	
+horarioAtendimento:
+	idMedico
+	intervalo
+	dia/dias
+	horarios
+	
+endereço:
+	endereço
+	complemento
+	número
+	bairro
+	cidade
+	estado
+	
+telefone:
+	ddd
+	número
+
+médico:
+	nome
+	cpf
+	especialidade: []
+	crm
+	telefone
+	endereco	
+		
+paciente:
+	nome
+	cpf
+	telefone
+	endereco
+	
+consulta
+	status: agendado || confirmada || cancelada
+	paciente
+	médico
+	data
+	horário
+	
+avaliacoes_medicos
+	comentário
+	nota
+	
